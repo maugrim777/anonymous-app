@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+
+.container {
+    width:100%;
+    min-height:100vh;
+    background: black url('../../assets/images/landing_page.jpg') no-repeat center;
+    background-size: cover;
+    font-family: 'Rock Salt', cursive;
+    color: #F3F9F3;
+}
+
+#overlay {
+    min-height:100vh;
+    width:100%;
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    font-size: 20px;
+    letter-spacing: 0.2em;
+}
+
+#space-top {
+    flex-grow:1;
+}
+
+h1 {
+    /* flex-grow: 1; */
+    font-size: 3em;
+    min-height:20vh;
+    margin:0;
+}
+
+h2 {
+    /* flex-grow: 1; */
+    font-size: 2em;
+    /* min-height: 10vh; */
+}
+
+#navigation{
+    min-height: 25vh;
+    font-size: 1rem;
+}
+
+#particles {
+    position:fixed;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.tsparticles-canvas-el{
+    min-height: 100vh;
+    z-index:-1;
+}
+.btn {
+    margin: 10px 0;
+}
+
+#landing-footer{
+    width:100%;
+    height:100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-top: 1em;
+    padding: 10px 0;
+    font-size: 1em;
+}
+
+
+@media (max-width: 1400px) {#overlay{font-size: 18px;}}
+@media (max-width: 1200px) {#overlay{font-size: 16px;}}
+@media (max-width: 1000px) {#overlay{font-size: 14px;}}
+@media (max-width: 800px) {#overlay{font-size: 12px;}}
+@media (max-width: 671px) {#overlay{font-size: 10px;}}
+
