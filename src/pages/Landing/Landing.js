@@ -13,7 +13,7 @@ class Landing extends React.Component{
                 <ParticlesJS />
                 <div id='overlay'>
                     <div id='space-top'></div>
-                        <h1>Welcome to the Anonymous App</h1>
+                        <h1>Welcome to the Agora</h1>
                         <h2>No names, no faces, just free discussions and ideas</h2>
                             <ButtonStroke />
                     <div id='landing-footer'>

@@ -64,23 +64,23 @@ input {
     z-index:100;
     margin: 5vh 0;
 }
-
+/* 
 #channel-list {
-    max-width: 70vw;
     z-index:50;
-    /* border: 1px solid red; */
+    border: 1px solid red;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
     max-height: 35vh;
-    overflow-y: auto;
-}
+    overflow-y: scroll;
 
- #channel-list::-webkit-scrollbar-track
+} */
+/* 
+#channel-list::-webkit-scrollbar-track
 {
 	border: 1px solid black;
     background-color: rgba(5, 245, 245, .4);
-} 
+}
 
 #channel-list::-webkit-scrollbar
 {
@@ -90,9 +90,8 @@ input {
 
 #channel-list::-webkit-scrollbar-thumb
 {
-    background-color: #099C9C;	
-
-}
+	background-color: #099C9C;	
+} */
 
 
 .channel {
