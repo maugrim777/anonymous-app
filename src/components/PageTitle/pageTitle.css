@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
+#pageTitle {
+  font-family: 'Rock Salt', cursive;
+  color: white;
+  text-align: center;
+  font-size: 2em;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}

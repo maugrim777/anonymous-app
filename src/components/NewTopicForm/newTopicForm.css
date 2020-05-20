@@ -1,0 +1,80 @@
+#newTopicForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  font-family: 'Montserrat', sans-serif;
+  /* Fields */
+  /* Button */
+}
+
+#newTopicForm * {
+  margin: 1em;
+  width: 30em;
+}
+
+#newTopicForm #newTopic, #newTopicForm #deletePassword {
+  padding: 0 2em;
+  background-color: transparent;
+  /* Remove background fill */
+  text-transform: uppercase;
+  /* Make text all uppercase */
+  border-radius: 0;
+  /* Remove corner curve */
+  border: 2px solid #fff;
+  /* 2px white border */
+  color: #fff;
+  /* White text */
+  height: 4em;
+  /* Increase input height */
+  font-size: 1em;
+}
+
+#newTopicForm ::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #8b8989;
+}
+
+#newTopicForm :-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #8b8989;
+  opacity: 1;
+}
+
+#newTopicForm ::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #8b8989;
+  opacity: 1;
+}
+
+#newTopicForm :-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #8b8989;
+}
+
+#newTopicForm ::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #8b8989;
+}
+
+#newTopicForm #createTopic {
+  text-transform: uppercase;
+  padding: .5em 100px;
+  color: white;
+  background: #444;
+  font-weight: normal;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1em;
+  width: 20em;
+  z-index: 1;
+}

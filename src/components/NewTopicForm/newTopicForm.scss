@@ -1,0 +1,55 @@
+#newTopicForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    font-family: 'Montserrat', sans-serif;;
+
+    * {
+        margin: 1em;
+        width: 30em;
+    }
+
+    /* Fields */
+    #newTopic, #deletePassword {
+    padding: 0 2em;
+    background-color: transparent; /* Remove background fill */
+    text-transform: uppercase; /* Make text all uppercase */
+    border-radius: 0; /* Remove corner curve */
+    border: 2px solid #fff; /* 2px white border */
+    color: #fff; /* White text */
+    height: 4em; /* Increase input height */
+    font-size: 1em;
+    }
+
+    ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        color:    rgb(139, 137, 137);
+    }
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    rgb(139, 137, 137);
+    opacity:  1;
+    }
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    rgb(139, 137, 137);
+    opacity:  1;
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:    rgb(139, 137, 137);
+    }
+    ::-ms-input-placeholder { /* Microsoft Edge */
+    color:    rgb(139, 137, 137);
+    }
+/* Button */
+    #createTopic {
+        text-transform: uppercase;
+        padding: .5em 100px;
+        color: white;
+        background: #444;
+        font-weight: normal;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 1em;
+        width:20em;
+        z-index:1;
+    }  
+}

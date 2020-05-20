@@ -1,42 +1,31 @@
 import React from 'react'
 import "./createPublicTopic.css"
-import Logo from "../../components/Logo/Logo"
+// import Logo from "../../components/Logo/Logo"
+// import ParticlesJS from "../../components/Particles/Particles"
+import PageTitle from "../../components/PageTitle/PageTitle"
+import NewTopicForm from "../../components/NewTopicForm/NewTopicForm"
+import Footer from "../../components/Footer/Footer"
 import ParticlesJS from "../../components/Particles/Particles"
 
 
 
 
-class PublicChannelLanding extends React.Component{
+class CreatePublicTopic extends React.Component{
     
 
     render(){
         
 
         return(
-            <div className='container'>
+            <div>
                 <ParticlesJS />
-                <div id='overlay'>
-                        <h1>Create New Public Topic</h1>
-                        {/* <h2> Please select a discussion topic from the list below:</h2> */}
-                        {/* <div className="search-container">
-                            <input type="text" placeholder="Search..." />
-                            <div className="search"></div>
-                        </div> */}
-                        {/* <ul id='channel-list'>
-                            <li className='channel'>topic1</li>
-                            <li className='channel'>topic2</li>
-                            <li className='channel'>topic3</li>
-                            <li className='channel'>topic4</li>
-                            <li className='channel'>topic5</li>
-                        </ul> */}
-                        {/* <button id='create-channel' onClick={this.newTopic}>Create New Discussion Topic</button> */}
-                        <div id='landing-footer'>
-                            <Logo />
-                            &copy; Copyright - Gabriel Vlasceanu - All Rights Reserved.
-                        </div>
+                <div className='createPublicTopic-container'>
+                    <PageTitle pageTitle="Create New Public Forum Topic" />
+                    <NewTopicForm />
+                        <Footer />
                 </div>
-                
             </div>
+            
         )
     }
 
@@ -44,4 +33,4 @@ class PublicChannelLanding extends React.Component{
 }
 
 
-export default PublicChannelLanding
+export default CreatePublicTopic;

@@ -5,11 +5,11 @@
            "extensionName": ".css",
            "savePath": "~/"
        },
-       {
-           "extensionName": ".min.css",
-           "format": "compressed",
-           "savePath": "~/"
-       }
+    //    {
+    //        "extensionName": ".min.css",
+    //        "format": "compressed",
+    //        "savePath": "~/"
+    //    }
    ],
    "liveSassCompile.settings.excludeList": [
       "**/node_modules/**",
