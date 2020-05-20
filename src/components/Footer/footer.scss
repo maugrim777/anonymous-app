@@ -20,6 +20,24 @@
         user-select: none;
     }
 
+    .logo {
+        background: url("./logo.png") no-repeat center;
+        background-size: cover;
+        height: 3em;
+        width: 3em;
+        
+        border-radius: 10px;
+        transition: all .5s
+    }
+    
+    .logo:hover{
+        transform: scale(1.1);
+    }
+    
+    a {
+        z-index:300;
+    }
+    
     @media (max-width: 800px) {
         & {
             flex-direction: column;

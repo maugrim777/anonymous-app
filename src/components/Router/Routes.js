@@ -1,18 +1,15 @@
 import React from 'react'
-import Landing from "../../pages/Landing/Landing"
-import CompanyChannelLanding from "../../pages/CompanyChannel/CompanyChannelLanding"
-import PublicChannelLanding from "../../pages/PublicChannel/PublicChannelLanding"
-import PrivateChannelLanding from "../../pages/PublicChannel/PublicChannelLanding"
-import CreatePublicTopic from "../../pages/CreatePublicTopic/CreatePublicTopic"
+import Pages from "../Pages"
 
 //Array with the app pages and their paths
 
 const ROUTES = [
-    { path: "/", key:'root', exact: true, component: () => <Landing /> },
-    { path: "/public", key:'public', exact: true, component: (props) => <PublicChannelLanding {...props}/>},
-    { path: "/public/newTopic", key:'newTopic',exact: true, component: (props) => <CreatePublicTopic {...props}/>},
-    { path: "/private", key:'private',exact: true, component: (props) => <PrivateChannelLanding {...props}/> },
-    { path: "/company", key:'company',exact: true, component: (props) => <CompanyChannelLanding {...props}/>}
+    { path: "/", key:'root', exact: true, component: () => <Pages.Home /> },
+    { path: "/public_old", key:'public', exact: true, component: (props) => <Pages.PublicChannelLanding {...props}/>},
+    { path: "/public", key:'public', exact: true, component: (props) => <Pages.PublicForum {...props}/>},
+    { path: "/public/newTopic", key:'newTopic',exact: true, component: (props) => <Pages.CreatePublicTopic {...props}/>},
+    { path: "/private", key:'private',exact: true, component: (props) => <Pages.PrivateChannelLanding {...props}/> },
+    { path: "/company", key:'company',exact: true, component: (props) => <Pages.CompanyChannelLanding {...props}/>}
     
   ];
   

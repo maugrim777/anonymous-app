@@ -1,0 +1,63 @@
+.forumSelect {
+	display: flex;
+	font-size: 20px;
+
+	@media (max-width: 800px) {
+		& {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+}
+
+.btn {
+    font-family: 'Rock Salt', cursive;;
+	// display: inline-block;
+	display: flex;
+	flex-direction: column;
+	color: white;
+	// min-width: 154px;
+	min-width: 7.7em;
+	text-decoration: none;
+	// margin-right: 50px;
+	margin-right:2.5em;
+	// padding: 20px;
+	padding: 1em;
+	position: relative;
+	text-align: center;
+	transition: all .4s;
+	letter-spacing: .2em;
+	
+	&:hover {
+		color: #fcce89;
+		transform: scale(1.4);
+		.button-stroke:nth-child(2) {
+			stroke-dashoffset: 0;
+		}
+	}
+}
+
+.button-stroke {
+	display: block;
+	// width: calc(100% - 40px);
+	width: calc(100% - 2em);
+	// height: 20px;
+	height: 1.5em;
+	// stroke: #2c0422;
+	stroke: #868085;
+	position: absolute;
+	// left: 20px;
+	// bottom: -10px;
+	top: 3em;
+	stroke-width: 4;
+	
+	&:nth-child(2) {
+		stroke-dasharray: 650px;
+		stroke-dashoffset: 650px;
+		stroke: #fcce89;
+		stroke-width: 5;
+		transition: stroke-dashoffset 800ms ease-out;
+	}
+
+}
+
