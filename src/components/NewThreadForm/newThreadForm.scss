@@ -1,4 +1,4 @@
-#newTopicForm {
+#newThreadForm {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,10 +14,10 @@
     }
 
     /* Fields */
-    #newTopic, #deletePassword {
+    #newThread, #deletePassword {
     padding: 0 2em;
     background-color: transparent; /* Remove background fill */
-    text-transform: uppercase; /* Make text all uppercase */
+    // text-transform: uppercase; /* Make text all uppercase */
     border-radius: 0; /* Remove corner curve */
     border: 2px solid #fff; /* 2px white border */
     color: #fff; /* White text */
@@ -25,7 +25,7 @@
     font-size: 1em;
     }
 
-    #newTopic:focus, #deletePassword:focus {
+    #newThread:focus, #deletePassword:focus {
         outline:none;
     }
 
@@ -48,8 +48,8 @@
     }
     /* Button */
 
-    #createTopic {
-        text-transform: uppercase;
+    #createThread {
+        // text-transform: uppercase;
         padding: .5em 10px;
         color: white;
         background: #444;

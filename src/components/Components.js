@@ -1,17 +1,17 @@
 import Footer from "./Footer/Footer"
-import NewTopicForm from './NewTopicForm/NewTopicForm'
+import NewThreadForm from './NewThreadForm/NewThreadForm'
 import PageTitle from './PageTitle/PageTitle'
 import ParticlesJS from './Particles/Particles'
 import ForumSelect from './ForumSelect/ForumSelect'
-import TopicSelect from "./TopicSelect/TopicSelect"
+import ThreadSelect from "./ThreadSelect/ThreadSelect"
 
 const Components = {
     Footer,
-    NewTopicForm,
+    NewThreadForm,
     PageTitle,
     ParticlesJS,
     ForumSelect,
-    TopicSelect
+    ThreadSelect
 }
 
 export default Components;

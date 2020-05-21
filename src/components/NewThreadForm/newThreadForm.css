@@ -1,4 +1,4 @@
-#newTopicForm {
+#newThreadForm {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -19,18 +19,16 @@
   /* Button */
 }
 
-#newTopicForm * {
+#newThreadForm * {
   margin: 1em;
   width: 30em;
   max-width: 80%;
 }
 
-#newTopicForm #newTopic, #newTopicForm #deletePassword {
+#newThreadForm #newThread, #newThreadForm #deletePassword {
   padding: 0 2em;
   background-color: transparent;
   /* Remove background fill */
-  text-transform: uppercase;
-  /* Make text all uppercase */
   border-radius: 0;
   /* Remove corner curve */
   border: 2px solid #fff;
@@ -42,39 +40,38 @@
   font-size: 1em;
 }
 
-#newTopicForm #newTopic:focus, #newTopicForm #deletePassword:focus {
+#newThreadForm #newThread:focus, #newThreadForm #deletePassword:focus {
   outline: none;
 }
 
-#newTopicForm ::-webkit-input-placeholder {
+#newThreadForm ::-webkit-input-placeholder {
   /* WebKit, Blink, Edge */
   color: #8b8989;
 }
 
-#newTopicForm :-moz-placeholder {
+#newThreadForm :-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   color: #8b8989;
   opacity: 1;
 }
 
-#newTopicForm ::-moz-placeholder {
+#newThreadForm ::-moz-placeholder {
   /* Mozilla Firefox 19+ */
   color: #8b8989;
   opacity: 1;
 }
 
-#newTopicForm :-ms-input-placeholder {
+#newThreadForm :-ms-input-placeholder {
   /* Internet Explorer 10-11 */
   color: #8b8989;
 }
 
-#newTopicForm ::-ms-input-placeholder {
+#newThreadForm ::-ms-input-placeholder {
   /* Microsoft Edge */
   color: #8b8989;
 }
 
-#newTopicForm #createTopic {
-  text-transform: uppercase;
+#newThreadForm #createThread {
   padding: .5em 10px;
   color: white;
   background: #444;
@@ -90,12 +87,12 @@
   opacity: .7;
 }
 
-#newTopicForm #createTopic:hover {
+#newThreadForm #createThread:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   opacity: 1;
 }
 
-#newTopicForm #createTopic:focus {
+#newThreadForm #createThread:focus {
   outline: none;
 }

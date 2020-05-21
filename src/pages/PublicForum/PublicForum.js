@@ -4,10 +4,31 @@ import "./publicForum.css"
 
 
 class PublicForum extends React.Component{
-    
+    constructor(props) {
+        super(props);
+        this.state = {
+            threads : []
+        }
+
+    }
+
+
+    componentDidMount() {
+        const url = 'https://agora-api-maugrim777.herokuapp.com/public/getThreads'
+        // 'http://localhost:3000/public/getThreads' || url
+        fetch(url)
+            .then(response =>  response.json())
+            .then(data => this.setState({threads: data}))
+        
+        
+    }
+
+
     newTopic = () => {
         this.props.history.push('/public/newTopic')
     }
+
+
 
     render(){
         return(
@@ -15,8 +36,8 @@ class PublicForum extends React.Component{
                 <Components.ParticlesJS />              
                 <div className='publicForum-container'>
                     <Components.PageTitle pageTitle='Welcome to the Public Forum' id='pageTitle' />
-                    <Components.TopicSelect id='topicSelect'/>
-                    <button id='create-channel' onClick={this.newTopic}>Create New Discussion Topic</button>
+                    <Components.ThreadSelect threads={this.state.threads} id='threadSelect'/>
+                    <button id='create-channel' onClick={this.newTopic}>Create New Thread</button>
                     <Components.Footer />
                 </div>
             </div>
