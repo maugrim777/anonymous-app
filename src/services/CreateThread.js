@@ -1,5 +1,5 @@
 const CreateThread = (event, forum) => {
-//    event.preventDefault()
+   event.preventDefault()
 
    const formData = new FormData(event.target)
 
@@ -11,7 +11,7 @@ const CreateThread = (event, forum) => {
     console.log(forum)
 
     const url = 'https://agora-api-maugrim777.herokuapp.com/newThread'
-        fetch('http://localhost:3000/newThread' || url, {
+        fetch(url, {
             'method': "POST", 
             'body': JSON.stringify({
                     forum: forum,

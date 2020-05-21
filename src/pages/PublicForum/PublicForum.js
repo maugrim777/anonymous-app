@@ -18,7 +18,10 @@ class PublicForum extends React.Component{
         // 'http://localhost:3000/public/getThreads' || url
         fetch(url)
             .then(response =>  response.json())
-            .then(data => this.setState({threads: data}))
+            .then(data => {
+                console.log(data)
+                this.setState({threads: data})})
+            .catch(err => console.log(err))
         
         
     }
