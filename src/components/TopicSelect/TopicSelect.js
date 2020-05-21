@@ -20,8 +20,6 @@ function TopicSelect() {
                     <li className='channel'>topic5</li>
                     <li className='channel'>topic6</li>
                     <li className='channel'>topic7</li>
-                    <li className='channel'>topic8</li>
-                    <li className='channel'>topic9</li>  
             </ul>
         </div>
     )

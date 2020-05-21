@@ -10,7 +10,7 @@ class Home extends React.Component{
             <div>
                 <Components.ParticlesJS />              
                 <div className='homePage-container'>
-                    <Components.PageTitle pageTitle='Welcome to the Agora' id='title' />
+                    <Components.PageTitle pageTitle='Welcome to the Agora' id='pageTitle' />
                     <Components.ForumSelect id='selection'/>
                     <Components.Footer />
                 </div>

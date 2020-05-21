@@ -5,6 +5,7 @@
     flex-grow: 1;
     font-family: 'Montserrat', sans-serif;
     max-width: 80%;
+    z-index: 50;;
 
     * {
         margin: 1em;
@@ -24,6 +25,10 @@
     font-size: 1em;
     }
 
+    #newTopic:focus, #deletePassword:focus {
+        outline:none;
+    }
+
     ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
         color:    rgb(139, 137, 137);
     }
@@ -41,17 +46,30 @@
     ::-ms-input-placeholder { /* Microsoft Edge */
     color:    rgb(139, 137, 137);
     }
-/* Button */
+    /* Button */
+
     #createTopic {
         text-transform: uppercase;
-        padding: .5em 100px;
+        padding: .5em 10px;
         color: white;
         background: #444;
         font-weight: normal;
         cursor: pointer;
-        border-radius: 5px;
+        border-radius: 15px;
         font-size: 1em;
         width:20em;
         z-index:1;
+        text-align: center;
+        transition: all .2s;
+        opacity: .7;
+        
+        &:hover {
+            transform: scale(1.1);
+            opacity: 1;;
+        }
+
+        &:focus {
+            outline:none;
+        }
     }  
 }

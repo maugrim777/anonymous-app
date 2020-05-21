@@ -14,6 +14,7 @@
           flex-grow: 1;
   font-family: 'Montserrat', sans-serif;
   max-width: 80%;
+  z-index: 50;
   /* Fields */
   /* Button */
 }
@@ -39,6 +40,10 @@
   height: 4em;
   /* Increase input height */
   font-size: 1em;
+}
+
+#newTopicForm #newTopic:focus, #newTopicForm #deletePassword:focus {
+  outline: none;
 }
 
 #newTopicForm ::-webkit-input-placeholder {
@@ -70,13 +75,27 @@
 
 #newTopicForm #createTopic {
   text-transform: uppercase;
-  padding: .5em 100px;
+  padding: .5em 10px;
   color: white;
   background: #444;
   font-weight: normal;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 15px;
   font-size: 1em;
   width: 20em;
   z-index: 1;
+  text-align: center;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  opacity: .7;
+}
+
+#newTopicForm #createTopic:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  opacity: 1;
+}
+
+#newTopicForm #createTopic:focus {
+  outline: none;
 }

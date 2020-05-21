@@ -1,0 +1,4 @@
+#tsparticles .tsparticles-canvas-el {
+  position: absolute;
+  min-height: 100vh;
+}
