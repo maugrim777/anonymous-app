@@ -27,15 +27,11 @@
 .threadSelect .searchBox {
   margin-top: .5em;
   background: #adadad;
+  opacity: .8;
   height: 2em;
   border-radius: 2em;
   padding: .5em;
   z-index: 100;
-}
-
-.threadSelect .searchBox:hover > .searchInput {
-  width: 16em;
-  padding: 0 6px;
 }
 
 .threadSelect .searchBox:hover > .searchButton {
@@ -63,12 +59,16 @@
   transition: 0.4s;
 }
 
+.threadSelect .searchButton:focus {
+  outline: none;
+}
+
 .threadSelect .searchInput {
   border: none;
   background: none;
   outline: none;
   padding: 0;
-  color: #4e4d4d;
+  color: #1f1e1e;
   font-size: 1em;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -91,8 +91,12 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
   -ms-flex-line-pack: start;
       align-content: flex-start;
   -webkit-box-pack: center;

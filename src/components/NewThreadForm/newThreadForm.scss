@@ -72,4 +72,23 @@
             outline:none;
         }
     }  
+
+    h2 {
+        padding: 0 1em;
+        background-color: transparent; /* Remove background fill */
+        // border-radius: 5px; /* Remove corner curve */
+        // border: 2px solid #fff; /* 2px white border */
+        color: #fff; /* White text */
+        height: 4em; /* Increase input height */
+        font-size: 1.7em;
+        font-weight: normal;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    a {
+        text-align: center;
+    }
 }

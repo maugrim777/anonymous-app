@@ -60,6 +60,14 @@
   outline: none;
 }
 
+.publicForum-container h1 {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  color: white;
+  font-weight: 200;
+}
+
 @media (max-width: 1400px) {
   .publicForum-container {
     font-size: 18px;

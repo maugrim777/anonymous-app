@@ -7,7 +7,9 @@ class PublicForum extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            threads : []
+            threads : [],
+            search: '',
+            searchedThreads: []
         }
 
     }
@@ -20,27 +22,47 @@ class PublicForum extends React.Component{
             .then(response =>  response.json())
             .then(data => {
                 console.log(data)
-                this.setState({threads: data})})
-            .catch(err => console.log(err))
+                this.setState({threads: data, searchedThreads: data})})
+            .catch(err => {
+                console.log(err)
+                this.setState({threads: 'error'})})
         
         
     }
 
 
-    newTopic = () => {
-        this.props.history.push('/public/newTopic')
+    newThread = () => {
+        this.props.history.push('/public/newThread')
     }
 
+    handleSearch = (event) => {
+        this.setState({search: event.target.value})
+    }
 
-
+    goToThread = (e) => {
+        const threadID = e.target.dataset.id
+        this.props.history.push(`/public/${threadID}`)
+    }
+  
     render(){
+        
+        let filtered = this.state.threads
+
+        if (this.state.search) {
+            filtered = this.state.threads.filter( thread => thread.title.toLowerCase().includes(this.state.search))
+        }
+
+        console.log('filtered:' ,filtered)
         return(
             <div>
                 <Components.ParticlesJS />              
                 <div className='publicForum-container'>
                     <Components.PageTitle pageTitle='Welcome to the Public Forum' id='pageTitle' />
-                    <Components.ThreadSelect threads={this.state.threads} id='threadSelect'/>
-                    <button id='create-channel' onClick={this.newTopic}>Create New Thread</button>
+                    {this.state.threads==='error'
+                    ?<h1>Ooops! There was an error retrieving the threads!</h1>
+                    :<Components.ThreadSelect threads={filtered} handleSearch={this.handleSearch} goToThread={this.goToThread} id='threadSelect'/>}
+                    
+                    <button id='create-channel' onClick={this.newThread}>Create New Thread</button>
                     <Components.Footer />
                 </div>
             </div>

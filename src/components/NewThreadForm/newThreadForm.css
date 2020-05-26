@@ -96,3 +96,29 @@
 #newThreadForm #createThread:focus {
   outline: none;
 }
+
+#newThreadForm h2 {
+  padding: 0 1em;
+  background-color: transparent;
+  /* Remove background fill */
+  color: #fff;
+  /* White text */
+  height: 4em;
+  /* Increase input height */
+  font-size: 1.7em;
+  font-weight: normal;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#newThreadForm a {
+  text-align: center;
+}
