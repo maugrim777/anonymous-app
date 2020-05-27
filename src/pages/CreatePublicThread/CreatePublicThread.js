@@ -1,6 +1,7 @@
 import React from 'react'
 import "./createPublicThread.css"
 import Components from "../../components/Components"
+const bcrypt =require('bcryptjs') 
 
 
 class CreatePublicThread extends React.Component{
@@ -40,14 +41,24 @@ class CreatePublicThread extends React.Component{
         if (!this.state.title || !this.state.deleteThread) {
             this.setState({threadState: 'empty'})
         } else {
-            const url = 'https://agora-api-maugrim777.herokuapp.com/newThread'
+            
+            const hash = bcrypt.hashSync(this.state.deleteThread, 10)
+            console.log(this.state.deleteThread, hash)
+            let url =''
+            if (process.env.PORT) {
+                url = 'https://agora-api-maugrim777.herokuapp.com/newThread'
+            } else {
+                url = 'http://localhost:3000/newThread'
+            }
+            console.log('url is: ', url)
+            // const url = 'https://agora-api-maugrim777.herokuapp.com/newThread'
             // http://localhost:3000/newThread
             fetch(url , {
                 'method': "POST", 
                 'body': JSON.stringify({
                         forum: 'public',
                         title: this.state.title,
-                        deleteThread: this.state.deleteThread
+                        deleteThread: hash
                 }),
                 'headers': {
                     "Content-Type": "application/json"

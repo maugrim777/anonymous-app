@@ -4,6 +4,7 @@ import PageTitle from './PageTitle/PageTitle'
 import ParticlesJS from './Particles/Particles'
 import ForumSelect from './ForumSelect/ForumSelect'
 import ThreadSelect from "./ThreadSelect/ThreadSelect"
+import CreatePost from "./CreatePost/CreatePost"
 
 const Components = {
     Footer,
@@ -11,7 +12,8 @@ const Components = {
     PageTitle,
     ParticlesJS,
     ForumSelect,
-    ThreadSelect
+    ThreadSelect,
+    CreatePost
 }
 
 export default Components;

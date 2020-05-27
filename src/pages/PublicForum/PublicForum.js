@@ -2,6 +2,7 @@ import React from 'react'
 import Components from '../../components/Components'
 import "./publicForum.css"
 
+const url = process.env.PORT ? 'https://agora-api-maugrim777.herokuapp.com' : 'http://localhost:3000'
 
 class PublicForum extends React.Component{
     constructor(props) {
@@ -16,9 +17,18 @@ class PublicForum extends React.Component{
 
 
     componentDidMount() {
-        const url = 'https://agora-api-maugrim777.herokuapp.com/public/getThreads'
+
+        console.log(process.env.PORT)
+        // let url =''
+        //     if (process.env.PORT) {
+        //         url = 'https://agora-api-maugrim777.herokuapp.com/public/getThreads'
+        //     } else {
+        //         url = 'http://localhost:3000/public/getThreads'
+        //     }
+            console.log('url is: ', url)
+        // const url = 'https://agora-api-maugrim777.herokuapp.com/public/getThreads'
         // 'http://localhost:3000/public/getThreads' || url
-        fetch(url)
+        fetch(url + '/public/getThreads')
             .then(response =>  response.json())
             .then(data => {
                 console.log(data)

@@ -25,6 +25,49 @@
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  z-index: 50;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 2s;
+  transition: all 2s;
+  overflow: hidden;
+}
+
+#footer #copyright i {
+  color: #fdcd88;
+  font-size: 2em;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  opacity: .3;
+  cursor: pointer;
+}
+
+#footer #copyright p {
+  display: block;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  width: 0;
+  -webkit-transition: opacity 1.2s ease-in;
+  transition: opacity 1.2s ease-in;
+  opacity: 0;
+  letter-spacing: .4em;
+}
+
+#footer #copyright:hover i {
+  opacity: 1;
+}
+
+#footer #copyright:hover p {
+  opacity: 1;
+  display: inline-block;
+  width: auto;
+  height: auto;
 }
 
 #footer .logo {
