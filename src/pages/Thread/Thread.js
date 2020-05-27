@@ -3,7 +3,7 @@ import Components from '../../components/Components'
 import "./thread.css"
 import bcrypt from 'bcryptjs'
 
-const url = process.env.PORT ? 'https://agora-api-maugrim777.herokuapp.com' : 'http://localhost:3000' 
+const url = true ? 'https://agora-api-maugrim777.herokuapp.com' : 'http://localhost:3000' 
 
 class Thread extends React.Component{
     constructor(props) {

@@ -45,7 +45,7 @@ class CreatePublicThread extends React.Component{
             const hash = bcrypt.hashSync(this.state.deleteThread, 10)
             console.log(this.state.deleteThread, hash)
             let url =''
-            if (process.env.PORT) {
+            if (true) {
                 url = 'https://agora-api-maugrim777.herokuapp.com/newThread'
             } else {
                 url = 'http://localhost:3000/newThread'

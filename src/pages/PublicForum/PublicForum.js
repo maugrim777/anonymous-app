@@ -2,7 +2,7 @@ import React from 'react'
 import Components from '../../components/Components'
 import "./publicForum.css"
 
-const url = process.env.PORT ? 'https://agora-api-maugrim777.herokuapp.com' : 'http://localhost:3000'
+const url = true ? 'https://agora-api-maugrim777.herokuapp.com' : 'http://localhost:3000'
 
 class PublicForum extends React.Component{
     constructor(props) {
