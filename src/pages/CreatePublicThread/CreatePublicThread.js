@@ -3,6 +3,8 @@ import "./createPublicThread.css"
 import Components from "../../components/Components"
 const bcrypt =require('bcryptjs') 
 
+const url = process.env.REACT_APP_PRODUCTION===true ? 'https://agora-api-maugrim777.herokuapp.com' : 'http://localhost:3000' 
+
 
 class CreatePublicThread extends React.Component{
     constructor(props) {
@@ -43,17 +45,10 @@ class CreatePublicThread extends React.Component{
         } else {
             
             const hash = bcrypt.hashSync(this.state.deleteThread, 10)
-            console.log(this.state.deleteThread, hash)
-            let url =''
-            if (true) {
-                url = 'https://agora-api-maugrim777.herokuapp.com/newThread'
-            } else {
-                url = 'http://localhost:3000/newThread'
-            }
+
             console.log('url is: ', url)
-            // const url = 'https://agora-api-maugrim777.herokuapp.com/newThread'
-            // http://localhost:3000/newThread
-            fetch(url , {
+
+            fetch(url + '/newThread' , {
                 'method': "POST", 
                 'body': JSON.stringify({
                         forum: 'public',
@@ -66,18 +61,16 @@ class CreatePublicThread extends React.Component{
             })
                 .then(response =>  response.json())
                 .then(resp => {
-                    console.log(resp)
                     this.setState({threadState: 'success'})})
                 .catch(err => this.setState({threadState: 'error'}))
         }
     }
 
     render(){
-        console.log(this.state.threadState)
         return(
             <div>
                 <Components.ParticlesJS />
-                <div className='createPublicThread-container'>
+                <div className='createPublicThread-container container'>
                     <Components.PageTitle pageTitle="Create New Public Forum Thread" />
                     <Components.NewThreadForm threadState={this.state.threadState} handleTitle={this.handleTitle} handleDelete={this.handleDelete} handleSubmit={this.handleSubmit} handleReset={this.handleReset}/>
                     <Components.Footer />

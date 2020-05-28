@@ -12,9 +12,10 @@ function CreatePost({handleNewPost, newPost, savePost, handlePostInput, handlePo
                 ? <div id='newPostForm' >
                     <input id='newPost' name='title' type='text' placeholder='new post' onChange={handlePostInput} />
                     <input id='deletePassword' name='deletePost' type='password' placeholder='delete password' onChange={handlePostDelete}/>
+                    <button className='createPost' id='useMaster'>Use Master Password</button>  
                     <div id='options'>
-                        <button id='createPost' onClick={savePost}>Save</button>  
-                        <button id='createPost' onClick={handleNewPost} >Cancel</button>  
+                        <button className='createPost' onClick={savePost}>Save</button>  
+                        <button className='createPost' onClick={handleNewPost} >Cancel</button>  
                     </div>
                   </div>  
                 : <button id='newPostButton' onClick={handleNewPost}>New Post</button>

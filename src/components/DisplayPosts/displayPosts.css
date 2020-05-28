@@ -1,0 +1,207 @@
+.postsList {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 80vw;
+  color: white;
+  overflow-y: auto;
+  height: 45vh;
+  z-index: 100;
+}
+
+.postsList .post {
+  margin-top: 2px;
+  border: 2px solid rgba(218, 208, 208, 0.5);
+  border-radius: 5px;
+  padding: 5px 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 85% auto;
+      grid-template-columns: 85% auto;
+}
+
+.postsList .post span {
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
+
+.postsList .post span:hover {
+  color: #fdcd88;
+}
+
+.postsList .post #like-and-id {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.postsList .post #total-replies {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+}
+
+.postsList .post #replies {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+}
+
+.postsList .post i {
+  padding: 5px 5px;
+}
+
+.postsList .post .fa-trash-alt {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+.postsList .post .replyItem {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.postsList .post .replyItem .replyItemText {
+  border: 2px solid rgba(218, 208, 208, 0.5);
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin: 2px 0;
+  padding: 5px;
+  border-radius: 5px;
+  max-width: 70vw;
+  word-wrap: break-word;
+}
+
+.postsList .post #reply-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+  max-height: 20vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-top: 10px;
+}
+
+.postsList .post #reply-section .reply {
+  -webkit-box-flex: 3;
+      -ms-flex-positive: 3;
+          flex-grow: 3;
+  padding: 5px;
+  margin-right: 10px;
+  max-height: 20vh;
+  max-width: 50%;
+  min-height: 5vh;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 2px solid #fff;
+  /* 2px white border */
+  color: #fff;
+  /* White text */
+  font-size: 1em;
+}
+
+.postsList .post #reply-section .reply:focus {
+  outline: none;
+}
+
+.postsList .post #reply-section .deleteReply {
+  text-align: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  height: 5vh;
+  max-width: 10vw;
+  margin: 0;
+  border: 0;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 2px solid #fff;
+  /* 2px white border */
+  color: #fff;
+  /* White text */
+  font-size: .7em;
+}
+
+.postsList .post #reply-section .deleteReply:focus {
+  outline: none;
+}
+
+.postsList .post #reply-section .replyButton {
+  height: 5vh;
+  width: 10vw;
+  text-transform: uppercase;
+  color: white;
+  background: #444;
+  font-weight: 200;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: .6em;
+  text-align: center;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  opacity: .7;
+}
+
+.postsList .post #reply-section .replyButton:hover {
+  opacity: 1;
+}
+
+.postsList .post #reply-section .replyButton:focus {
+  outline: none;
+}
+
+.postsList .post #reply-section ::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #e6e6e6;
+}
+
+.postsList .post #reply-section :-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #e6e6e6;
+  opacity: 1;
+}
+
+.postsList .post #reply-section ::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #e6e6e6;
+  opacity: 1;
+}
+
+.postsList .post #reply-section :-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #e6e6e6;
+}
+
+.postsList .post #reply-section ::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #e6e6e6;
+}

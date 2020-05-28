@@ -4,6 +4,7 @@ import CreatePublicThread from "../pages/CreatePublicThread/CreatePublicThread"
 import PublicForum from "../pages/PublicForum/PublicForum"
 import Home from "../pages/Home/Home"
 import Thread from "../pages/Thread/Thread"
+import Post from "../pages/Post/Post"
 
 const Pages = {
     CompanyChannelLanding,
@@ -11,7 +12,8 @@ const Pages = {
     CreatePublicThread,
     PublicForum,
     Home,
-    Thread
+    Thread,
+    Post
 }
 
 export default Pages
