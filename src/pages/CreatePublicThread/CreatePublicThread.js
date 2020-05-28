@@ -3,7 +3,7 @@ import "./createPublicThread.css"
 import Components from "../../components/Components"
 const bcrypt =require('bcryptjs') 
 
-const url = process.env.REACT_APP_PRODUCTION===true ? 'https://agora-api-maugrim777.herokuapp.com' : 'http://localhost:3000' 
+const url = process.env.NODE_ENV==='production' ? 'https://agora-api-maugrim777.herokuapp.com' : 'http://localhost:3000' 
 
 
 class CreatePublicThread extends React.Component{
