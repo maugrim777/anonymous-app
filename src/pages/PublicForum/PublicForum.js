@@ -21,6 +21,7 @@ class PublicForum extends React.Component{
 
         console.log('url is: ', url)
 
+        console.log(process.env.NODE_ENV)
         fetch(url + '/public/getThreads')
             .then(response =>  response.json())
             .then(data => {
