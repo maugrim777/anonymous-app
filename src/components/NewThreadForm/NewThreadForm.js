@@ -3,20 +3,14 @@ import "./newThreadForm.css"
 
 
 
-function NewThreadForm({threadState,handleTitle, handleDelete, handleSubmit, handleReset}) {
+function NewThreadForm({threadState,handleOK, handleSubmit, handleReset}) {
 
     switch(threadState) {
         case 'success': return (
-                        <div id='newThreadForm' >
+                        <form id='newThreadForm'>
                             <h2 className='alert'>New thread Successfully created!</h2>
-                            <a href='/public'><button id='createThread'>OK</button></a>  
-                        </div>
-                    ); 
-        case 'empty': return (
-                        <div id='newThreadForm' >
-                            <h2 className='alert'>Thread Title or Delete Password Cannot be empty!</h2>
-                            <button onClick={handleReset} id='createThread'>OK</button>  
-                        </div>
+                            <button id='createThread' type='submit' onClick={handleOK}>OK</button>
+                        </form>
                     ); 
         case 'error': return (
                         <div id='newThreadForm' >
@@ -25,11 +19,12 @@ function NewThreadForm({threadState,handleTitle, handleDelete, handleSubmit, han
                         </div>  
                     ); 
         default: return (  
-                    <div id='newThreadForm' >
-                        <input id='newThread' name='title' type='text' placeholder='new thread' onChange={handleTitle}/>
-                        <input id='deletePassword' name='deleteThread' type='password' placeholder='delete password' onChange={handleDelete}/>
-                        <button id='createThread' onClick={handleSubmit}>Create Thread</button>  
-                    </div>        
+                    <form  onSubmit={handleSubmit} id='newThreadForm' >
+                        <input id='newThread' name='title' type='text' placeholder='new thread' autoFocus='autofocus'/>
+                        <input id='deletePassword' name='deleteThread' type='password' placeholder='delete password'/>
+                        <button id='createThread' type='submit'>Create Thread</button>  
+                    </form>      
+
                 )
     }
     

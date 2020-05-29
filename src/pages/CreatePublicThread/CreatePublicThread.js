@@ -9,50 +9,42 @@ const url = process.env.NODE_ENV==='production' ? 'https://agora-api-maugrim777.
 class CreatePublicThread extends React.Component{
     constructor(props) {
         super(props);
-        this.state = {
-            threadState: false,
-            title: '',
-            deleteThread: '',
-        }
-
-    }
-
-    handleTitle = (event) => {
-        this.setState({title:event.target.value})
-    }
-
-    handleDelete = (event) => {
-        this.setState({deleteThread:event.target.value})
+        this.state = {threadState: false}
     }
 
     handleReset = () => {
-        this.setState(
-            {threadState: '',
-            title: '',
-            deleteThread: ''}
-        )
+        this.setState({threadState: ''})
     }
 
-    handleKeyPress = (event) => {
-        console.log(event.key)
-        if (event.key==='Enter' && this.state.threadState) {this.handleReset()}
+    
+    handleOK = (event) => {
+        event.preventDefault()
+        console.log('hit')
+        console.log(event.target.innerHTML)
+        if (event.key === 'Enter' || event.target.innerHTML==='OK') {
+            window.removeEventListener('keydown', this.handleOK)
+            this.props.history.push('/public')
+        }
     }
 
-    handleSubmit = () => {
+    handleSubmit = (event) => {
+        event.preventDefault()
+        const data = []
+        for (const pair of new FormData(event.target)) {               
+            data.push(pair[0],pair[1])
+        }
+        const title = data[1]
+        const deleteThread = data[3]
 
-        if (!this.state.title || !this.state.deleteThread) {
-            this.setState({threadState: 'empty'})
-        } else {
-            
-            const hash = bcrypt.hashSync(this.state.deleteThread, 10)
-
-            console.log('url is: ', url)
-
+        if (!title || !deleteThread) {
+            alert('Thread Title or Delete Password Cannot be empty!')
+        }   else {
+            const hash = bcrypt.hashSync(deleteThread, 10)
             fetch(url + '/newThread' , {
                 'method': "POST", 
                 'body': JSON.stringify({
                         forum: 'public',
-                        title: this.state.title,
+                        title: title,
                         deleteThread: hash
                 }),
                 'headers': {
@@ -61,9 +53,11 @@ class CreatePublicThread extends React.Component{
             })
                 .then(response =>  response.json())
                 .then(resp => {
-                    this.setState({threadState: 'success'})})
+                    this.setState({threadState: 'success'})
+                    window.addEventListener('keydown', this.handleOK)
+                })
                 .catch(err => this.setState({threadState: 'error'}))
-        }
+        }     
     }
 
     render(){
@@ -72,7 +66,11 @@ class CreatePublicThread extends React.Component{
                 <Components.ParticlesJS />
                 <div className='createPublicThread-container container'>
                     <Components.PageTitle pageTitle="Create New Public Forum Thread" />
-                    <Components.NewThreadForm threadState={this.state.threadState} handleTitle={this.handleTitle} handleDelete={this.handleDelete} handleSubmit={this.handleSubmit} handleReset={this.handleReset}/>
+                    <Components.NewThreadForm 
+                        threadState={this.state.threadState} 
+                        handleSubmit={this.handleSubmit} 
+                        handleReset={this.handleReset}
+                        handleOK={this.handleOK} />
                     <Components.Footer />
                 </div>
             </div>          
