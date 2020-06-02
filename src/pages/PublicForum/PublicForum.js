@@ -30,7 +30,6 @@ class PublicForum extends React.Component{
             .catch(err => {
                 this.setState({threads: 'error'})})
         
-        
     }
 
 
@@ -46,6 +45,8 @@ class PublicForum extends React.Component{
         const threadID = e.target.dataset.id
         this.props.history.push(`/public/${threadID}`)
     }
+
+    
   
     render(){
         
@@ -59,6 +60,7 @@ class PublicForum extends React.Component{
             <div>
                 <Components.ParticlesJS />              
                 <div className='publicForum-container container'>
+                    <Components.TopNav history={this.props.history}/>
                     <Components.PageTitle pageTitle='Welcome to the Public Forum' id='pageTitle' />
                     {this.state.threads==='error'
                     ?<h1>Ooops! There was an error retrieving the threads!</h1>

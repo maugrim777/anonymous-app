@@ -3,7 +3,7 @@ import "./newThreadForm.css"
 
 
 
-function NewThreadForm({threadState,handleOK, handleSubmit, handleReset}) {
+function NewThreadForm({threadState,handleOK, handleSubmit, handleReset, handleMasterPass}) {
 
     switch(threadState) {
         case 'success': return (
@@ -21,7 +21,11 @@ function NewThreadForm({threadState,handleOK, handleSubmit, handleReset}) {
         default: return (  
                     <form  onSubmit={handleSubmit} id='newThreadForm' >
                         <input id='newThread' name='title' type='text' placeholder='new thread' autoFocus='autofocus'/>
+                        <div id='delete-section'>
                         <input id='deletePassword' name='deleteThread' type='password' placeholder='delete password'/>
+                        <div id='createThread' onClick={handleMasterPass}>Use Master Password</div> 
+                        </div>
+                         
                         <button id='createThread' type='submit'>Create Thread</button>  
                     </form>      
 

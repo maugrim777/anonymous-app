@@ -73,6 +73,21 @@
         }
     }  
 
+    #delete-section {
+        display: flex;
+        width: 70%;
+        align-items: center;
+        
+        div {
+            font-size: .7em;
+            padding: 0;
+            width: 10em;
+            height: 5em;
+            display: flex;
+            align-items: center;
+        }
+    }
+
     h2 {
         padding: 0 1em;
         background-color: transparent; /* Remove background fill */

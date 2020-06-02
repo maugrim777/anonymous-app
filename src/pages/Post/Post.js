@@ -28,16 +28,21 @@ class Post extends React.Component{
             })
             .catch(err => console.log(err))
     }
+
+    handleMasterPass = (event) => {
+        event.target.parentNode.children[1].value = window.localStorage.getItem('masterPassword' || alert('No Master Password Set'))
+    }
+
     render(){
-        // console.log(this.state.post)
-        // console.log(this.state.thread)
+
       return(
             <div>
                 <Components.ParticlesJS />
                     {this.state.thread 
                         ? <div className='container'>
+                            <Components.TopNav history={this.props.history}/>
                             <Components.PageTitle pageTitle={`${this.state.thread.title}, Post ID: ${this.state.post[0]._id}`} id='pageTitle' />
-                            <Components.DisplayOnePost post={this.state.post[0]}/>
+                            <Components.DisplayOnePost post={this.state.post[0]} handleMasterPass={this.handleMasterPass}/>
                         </div>      
                         : <div className='container'> 
                                 <h1>Loading Post</h1>

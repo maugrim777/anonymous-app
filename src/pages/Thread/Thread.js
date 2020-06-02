@@ -166,17 +166,62 @@ class Thread extends React.Component{
         console.log(this.state.thread._id)
         this.props.history.push(`/public/${this.state.thread._id}/${event.target.dataset.postid}/`)
     }
- 
+    
+    handleMasterPassPost = () => {
+        document.getElementById('deletePassword').value=window.localStorage.getItem('masterPassword')
+        this.setState({postDelete: window.localStorage.getItem('masterPassword')})
+        console.log(document.getElementById('deletePassword').value)
+    }
+
+    handleMasterPassReply = (event) => {
+        event.target.parentNode.children[1].value=window.localStorage.getItem('masterPassword')
+        this.setState({replyDelete:window.localStorage.getItem('masterPassword')})
+
+    }
+
+    deletePost = (event) => {
+
+        let post_id=event.target.parentNode.children[1].children[1].innerHTML.slice(4,)
+
+        let deletePost = prompt('Please provide the Post Delete Password')
+
+        if (deletePost == null || deletePost === "") {
+            alert("The post was not deleted!");
+          } else {
+              fetch(url+`/public/${this.state.threadID}/${post_id}/delete`, {
+                'method': "DELETE",
+                'body': JSON.stringify({
+                    deletePost: deletePost
+                }),
+                'headers': {
+                    "Content-Type": "application/json"
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data === 'incorrect password') {
+                        alert('Incorrect delete password!')
+                    } else {
+                        alert('Post successfully deleted!')
+                        window.location.href = `/public/${this.state.threadID}`
+                    }    
+                })
+                .catch(err => console.log(err))
+          }
+       
+    }
+
     render(){
       return(
             <div>
                 <Components.ParticlesJS />              
                 <div className='thread-container container'>
+                    <Components.TopNav history={this.props.history}/>
                     <Components.PageTitle pageTitle={`Welcome to the ${this.state.thread.title} thread!`} id='pageTitle' />
                     {this.state.deleteThread
                         ? this.state.delThreadPass
                             ?   <div id='delThreadConfirmation' >          
-                                    <input type="password" id='deletePassword' placeholder='Please Enter the Thread delete Password' onChange={this.handleDeleteThreadPasswordInput}/>
+                                    <input type="password" id='deletePassword' placeholder='Please Enter the Thread delete Password' onChange={this.handleDeleteThreadPasswordInput} autoFocus='autofocus'/>
                                     <div id='options'>
                                         <button id='delThread' onClick={this.handleDeleteThread} >Delete Thread</button>  
                                     </div>
@@ -195,9 +240,18 @@ class Thread extends React.Component{
                                 savePost={this.savePost} 
                                 handlePostInput={this.handlePostInput}
                                 handlePostDelete={this.handlePostDelete}
+                                handleMasterPassPost={this.handleMasterPassPost}
                             />
                             {this.state.thread.posts                                
-                                ?<Components.DisplayPosts state={this.state} handleReplyInput={this.handleReplyInput} handleReplyDelete={this.handleReplyDelete} saveReply={this.saveReply} fullPost={this.fullPost}/>
+                                ?<Components.DisplayPosts 
+                                    state={this.state} 
+                                    handleReplyInput={this.handleReplyInput} 
+                                    handleReplyDelete={this.handleReplyDelete}  
+                                    saveReply={this.saveReply} 
+                                    fullPost={this.fullPost} 
+                                    handleMasterPassReply={this.handleMasterPassReply}
+                                    deletePost={this.deletePost}
+                                 />
                                 :<h1>Loading Posts</h1>
                             }
                             </div>

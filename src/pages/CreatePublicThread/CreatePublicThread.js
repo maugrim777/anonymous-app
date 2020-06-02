@@ -60,6 +60,15 @@ class CreatePublicThread extends React.Component{
         }     
     }
 
+    handleMasterPass = () => {
+        if (window.localStorage.getItem('masterPassword')) {
+            document.getElementById('deletePassword').value=window.localStorage.getItem('masterPassword')
+        } else {
+            alert('No Master Password Set')
+        }
+        
+    }
+
     render(){
         return(
             <div>
@@ -70,7 +79,8 @@ class CreatePublicThread extends React.Component{
                         threadState={this.state.threadState} 
                         handleSubmit={this.handleSubmit} 
                         handleReset={this.handleReset}
-                        handleOK={this.handleOK} />
+                        handleOK={this.handleOK}
+                        handleMasterPass={this.handleMasterPass} />
                     <Components.Footer />
                 </div>
             </div>          

@@ -49,6 +49,11 @@
         .fa-trash-alt {
             grid-column: 1/3;
             justify-self: end;
+            cursor: pointer;
+
+            &:hover {
+                color: #fdcd88;
+            }
         }
 
         .replyItem {

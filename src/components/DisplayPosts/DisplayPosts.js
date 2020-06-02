@@ -2,7 +2,7 @@
 import React from 'react';
 import "./displayPosts.css"
 
-function DisplayPosts({state, handleReplyInput, handleReplyDelete, saveReply, fullPost}) {
+function DisplayPosts({state, handleReplyInput, handleReplyDelete, saveReply, fullPost, handleMasterPassReply, deletePost}) {
     return(
         <div className='postsList'>
             {state.thread.posts.map((post,i) => 
@@ -23,10 +23,10 @@ function DisplayPosts({state, handleReplyInput, handleReplyDelete, saveReply, fu
                     <div id='reply-section'>
                         <textarea className='reply' placeholder="Reply to post..." onChange={handleReplyInput}/>
                         <input type='password' className='deleteReply' placeholder='delete password' onChange={handleReplyDelete} />
-                        <button className='replyButton' id='useMaster'>Use Master Password</button>
+                        <button className='replyButton' id='useMaster' onClick={handleMasterPassReply}>Use Master Password</button>
                         <button className='replyButton' id='saveReply' data-postID={post._id} onClick={saveReply}>Reply</button>
                     </div>
-                    <i class="fas fa-trash-alt"></i>
+                    <i class="fas fa-trash-alt" onClick={deletePost}></i>
 
                 </div>)}
         </div>
