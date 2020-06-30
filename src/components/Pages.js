@@ -1,5 +1,5 @@
-import CompanyChannelLanding from "../pages/CompanyChannel/CompanyChannelLanding"
-import PrivateChannelLanding from "../pages/PrivateChannel/PrivateChannelLanding"
+import CompanyForum from "../pages/CompanyForum/CompanyForum"
+import PrivateForum from "../pages/PrivateForum/PrivateForum"
 import CreatePublicThread from "../pages/CreatePublicThread/CreatePublicThread"
 import PublicForum from "../pages/PublicForum/PublicForum"
 import Home from "../pages/Home/Home"
@@ -7,8 +7,8 @@ import Thread from "../pages/Thread/Thread"
 import Post from "../pages/Post/Post"
 
 const Pages = {
-    CompanyChannelLanding,
-    PrivateChannelLanding,
+    CompanyForum,
+    PrivateForum,
     CreatePublicThread,
     PublicForum,
     Home,
